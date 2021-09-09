@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel="icon" href="{{ asset('img/favicon.png') }}">
+
+    <title>{% block title %} Bucket List {% endblock %}</title>
+</head>
+<body>
+    <div>
+        <header>
+            <a href="{{ path('main_home') }}"><img src="{{ asset('img/logo.svg') }}" alt="Bucket List"></a>
+            {% include 'inc/nav.html.twig' %}
+            {% block header %}{% endblock %}
+        </header>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+            <p>&copy;Bucket List {{ "now"|date("Y") }}</p>
+        </footer>
+    </div>
+</body>
+</html>
